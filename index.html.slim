@@ -1,0 +1,431 @@
+- sitetitle      = 'HOCA - Smart Homecare'
+
+/ dev
+- assetspath     = 'stylesheets'
+- scriptpaht     = 'scripts'
+- imagespath     = 'img'
+- httpspath      = 'https://'
+
+doctype html
+html lang="zh-TW"
+
+	head
+		meta charset="utf-8"
+		meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+		title #{sitetitle}
+		link href="#{imagespath}/favicon.png" rel="shortcut icon" type="image/png" sizes="32x32"
+		link href="#{assetspath}/swiper.css" rel="stylesheet" type="text/css"
+		link href="#{assetspath}/global.css" rel="stylesheet" type="text/css"
+
+	body
+		.cont_mask
+		.side_menu_wrap 
+			ul.side_menu
+				li.home
+					| gotop
+				li.side_menu_item
+					| 服務介紹
+				li.side_menu_item
+					| 產品功能
+				li.side_menu_item 
+					| 產品優勢
+				li.side_menu_item 
+					| 系統應用
+				li.language
+					a href="index.html" 繁
+					a href="cn.html" 簡
+					a href="en.html" En
+				li.logo_shuttle_w
+					a href="http://www.shuttle.com" target="_blank" Shuttle
+			.side_menu_close
+
+		.head_warp
+			.head.container
+				.logo_wrap
+					.logo
+						| SmartHomecare
+
+				.menu_wrap
+					ul.menu
+						li
+							| 服務介紹
+						li
+							| 產品功能
+						li
+							| 產品優勢
+						li
+							| 系統應用
+
+				.logo_shuttle
+					a.logo href="http://www.shuttle.com" target="_blank"
+
+				.btn_menu
+
+		.cont_wrap
+
+			#banner
+				/ .banner_mask
+				.container
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img src="#{imagespath}/banner_01.png"
+								.slogan
+									span 效率
+									h2 智慧篩選派案
+									p 智慧派遣配對，精準人力安排
+
+							.swiper-slide
+								img src="#{imagespath}/banner_02.png"
+								.slogan
+									span 便利
+									h2 行動服務打卡
+									p 提供手機服務打卡，強化資料正確運算
+
+							.swiper-slide
+								img src="#{imagespath}/banner_03.png"
+								.slogan
+									span 省力
+									h2 成果費用彙總
+									p 服務成果報表，即時一鍵產出
+
+							.swiper-slide
+								img src="#{imagespath}/banner_04.png"
+								.slogan
+									span 即時
+									h2 數位服務評鑑
+									p 服務評鑑數位化，有效提升單位服務品質
+
+						.swiper-button-next
+						.swiper-button-prev
+			
+			#banner_pagination
+				.container
+					.swiper-pagination
+
+			#section1
+				.container
+					.section_title 我們的服務
+					.service_detail
+						.l_col
+							img src="#{imagespath}/section1_01.png"
+							span.service_text1 督導/評鑑
+							span.service_text2 個案服務/打卡
+							span.service_text3 居服員
+							span.service_text4 媒合派遣
+
+						.r_col
+							.col_title
+								| 專業、多元、全方位
+								br
+								| 數位化服務管理系統
+
+							p
+								| 智慧居服管理系統是一套專為智慧居家服務所設計的作業流程管理系統，主要功能包含智慧篩選派案、行動服務打卡、成果費用彙總、數位服務評鑑、耗材庫存管理，提供滿足多樣、彈性的居家服務流程需求。
+
+						.clearfix
+
+					ul.service_class
+						li
+							.administrator
+								.se_talk
+									| 所有報表只需一指就輕鬆搞定!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 主管/行政人員
+
+							ul.se_item1
+								li 成果彙總
+								li 費用管理
+								li 績效管理
+
+						li
+							.supervisor
+								.se_talk
+									| 誰才是適合人選，終於不必再傷腦筋了!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 督導員
+
+							ul.se_item2
+								li 智慧篩選派案
+								li 職訓/會議安排
+								li 個案評鑑彙總
+						
+						li
+							.service_provider
+								.se_talk
+									| 搭配行動裝置，打卡、查詢都變得好方便!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 居服員
+
+							ul.se_item3
+								li 行動服務打卡
+								li 耗材申請
+								li 費用收取
+
+						li
+							.case
+								.se_talk
+									| 居服員真親切，給他一個讚!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 個案
+
+							ul.se_item4
+								li 居服任務提醒
+								li 數位服務評鑑
+
+			#section2
+				.container
+					.section_title 比想像更多的服務
+					ul.more_service
+						li.more_item1
+							img src="#{imagespath}/more_item1.png"
+							.col_item
+								.col_title 智慧篩選派案
+								ul
+									li 透過智慧篩選配對，精準快速的安排人力資源
+									li 彈性設定單次或週期性任務
+									li 設定發佈職訓/會議任務，系統自動通知與提醒
+						li.more_item2
+							img src="#{imagespath}/more_item2.png"
+							.col_item
+								.col_title 行動服務打卡
+								ul
+									li 提供居服員任務資訊可連線同步於隨身的行動裝置
+									li 具備行事曆功能，隨點即查服務時間和項目內容
+									li 利用行動裝置APP打卡，即時登錄居服員任務執行時間
+									li 為使任務執行不受限於網路連線，系統提供任務離線查詢與打卡功能
+						li.more_item3
+							img src="#{imagespath}/more_item3.png"
+							.col_item
+								.col_title 成果費用彙總
+								ul
+									li 提供符合評核單位需求的各項報表，並提供匯出excel功能
+									li 提供居服單位可結算居服人員薪資與在職津貼等相關人事費用
+									li 提供結算個案自費費用，並有提醒收費等機制
+									li 提供居服單位可簡便匯出整體核銷明細與分析
+						li.more_item4
+							img src="#{imagespath}/more_item4.png"
+							.col_item
+								.col_title 數位服務評鑑
+								ul
+									li 個案利用APP針對單項任務或整體意見回饋，完成後自動回傳雲端資料庫
+									li 整合相關居服評鑑資料，並提供居服單位可簡便匯出excel的功能
+						li.more_item5
+							img src="#{imagespath}/more_item5.png"
+							.col_item
+								.col_title 耗材庫存管理
+								ul
+									li 提供可於線上申請/簽核耗材需求，便於居服單位精準進行物料控管
+									li 提供行動載具耗材申請紀錄和即時庫存量查詢功能
+						li.more_item6
+							img src="#{imagespath}/more_item6.png"
+							.col_item
+								.col_title 訊息通知提醒 
+								ul
+									li 提示明日任務行程
+									li 每月個案收費訊息提醒
+									li 職訓/會議時程訊息通知
+									li 服務未遇訊息(案家不在，導致服務無法進行)
+
+			#section3
+				.container
+					.section_title 空下雙手，專注服務
+					.col_item
+						.row
+							.item1_icon
+							.item1
+								.col_sketch 簡便
+								.col_title 介面友善直覺，降低導入門檻
+								p 
+									| 提供居服單位免安裝軟體、免維護人力，所有資料即時彙總傳到雲端資料庫，只需在連線狀態下，就可以隨時查詢紀錄、執行派發任務，相關資訊與行動裝置同步更新。
+						.row
+							.item2_icon
+							.item2
+								.col_sketch 便利
+								.col_title 平台使用跨載具，隨身裝置無障礙
+								p 
+									| 系統支援各載具（Android載具）及主流瀏覽器（IE11, Firefox, Chrome, Safari）使用，透過行動裝置的打卡功能、任務即時查詢、重要訊息通知提醒，讓使用者更有效的進行服務，此外，我們還提供離線使用，即使在網路環境不佳的情況下，同樣可以執行功能，系統設計兼容並蓄，兼顧居服單位的傳統流程，並且發揮數位化的強大優勢。
+						.row
+							.item3_icon
+							.item3
+								.col_sketch 效率
+								.col_title 成果資料報表，輕鬆一鍵產出
+								p 
+									| 智慧居服管理系統最大的優勢是將居服流程裡的各個環節數位化，並且打破傳統紙本限制，讓以往需要耗費人力和時間整理資料、溝通、紀錄、分析等作業流程，透過系統功能優化服務品質、降低人工計算錯誤率、並且大幅提昇升作業效率。
+						.clearfix
+					hr
+
+				.compare_list
+					.container
+						table width="80%"
+							tr
+								th width="50%"
+								    .c_l_col
+										.c_name 數位化前
+								    .c_r_col
+										.c_icon
+								    		img src="#{imagespath}/section3_table1.svg"
+								th width="50%"
+								    .c_l_col
+										.c_name 數位化後
+									.c_r_col
+										.c_icon
+											img src="#{imagespath}/section3_table2.svg"
+							tr
+								td.c_col1 colspan="2"
+									| 篩選派案										
+							tr
+								td.c_col2
+									.row1
+										| 調閱紙本資料，一一人工比對適合人選
+									.row2
+										img src="#{imagespath}/section3_table_4.svg"
+										span#num1 0
+										| 分鐘
+								td.c_col3
+									.row1
+										| 系統智慧篩選，督導員再次確認
+									.row2
+										img src="#{imagespath}/section3_table_5.svg"
+										span#num2 0
+										| 分鐘
+							tr
+								td.c_col1 colspan="2"
+									| 服務打卡
+							tr
+								td.c_col2
+									.row1
+										| 人工記錄服務時間，紙本簽到簽退
+									.row2
+										img src="#{imagespath}/section3_table_6.svg"
+										span#num3 0
+										| 分鐘
+								td.c_col3
+									.row1
+										| 運用載具APP打卡簽到簽退
+									.row2
+										img src="#{imagespath}/section3_table_7.svg"
+										span#num4 0
+										| 分鐘
+							tr
+								td.c_col1 colspan="2"
+									| 成果報表
+							tr
+								td.c_col2
+									.row1
+										| 各項報表資料彙總結算
+									.row2
+										img src="#{imagespath}/section3_table_8.svg"
+										span#num5 0
+										| 數天
+								td.c_col3
+									.row1
+										| 選定報表後一鍵匯出
+									.row2
+										img src="#{imagespath}/section3_table_9.svg"
+										span#num6 0
+										| 分鐘
+							tr
+								td.c_col1 colspan="2"
+									| 服務評鑑
+							tr
+								td.c_col2
+									.row1
+										| 填寫紙本，須人工整理建檔與分析
+									.row2
+										img src="#{imagespath}/section3_table_10.svg"
+										span#num7 0
+										| 天
+								td.c_col3
+									.row1
+										| APP勾選，資料回傳系統
+									.row2
+										img src="#{imagespath}/section3_table_11.svg"
+										span#num8 0.5
+										| 天
+						hr
+
+						.description
+							img src="#{imagespath}/section3_table3.svg"
+							p
+								| 智慧居服管理系統適用於各類型居家服務單位使用，數位化流程能有效地提升行政效率，降低營運成本和改善人力資源分配，並且可在短時間內提供單位無痛進行e化導入。
+
+					
+			#section4
+				.container
+					.section_title 我們有更多的可能...
+					.description
+						p
+							| 除了提供居服單位完整的數位化服務管理系統之外，我們還可以針對不同產業特性和需求進行客製化服務，例如針對居家清潔派遣服務、到府維修、臨時人力派遣服務等各種應用，詳細相關資訊，歡迎您來信洽詢！
+					ul.other_item
+						li.ot_more1
+							img src="#{imagespath}/section4_pic-01.png"
+						li.ot_more2
+							span 到府清潔服務
+						li.ot_more3
+							img src="#{imagespath}/section4_pic-02.png"
+						li.ot_more4
+							img src="#{imagespath}/section4_pic-03.png"
+						li.ot_more5
+							img src="#{imagespath}/section4_pic-04.png"
+						li.ot_more6
+							img src="#{imagespath}/section4_pic-05.png"
+						li.ot_more7
+							img src="#{imagespath}/section4_pic-06.png"
+						li.ot_more8
+							span 各種人力派遣服務
+						li.ot_more9
+							img src="#{imagespath}/section4_pic-07.png"
+						li.ot_more10
+							img src="#{imagespath}/section4_pic-08.png"
+						li.ot_more11
+							img src="#{imagespath}/section4_pic-09.png"
+						li.ot_more12
+							span 到府維修服務
+						li.ot_more13
+							img src="#{imagespath}/section4_pic-10.png"
+						li.ot_more14
+							span 其他產業...
+						li.ot_more15
+							img src="#{imagespath}/section4_pic-11.png"
+
+		.footer_wrap
+			.footer_logo
+				.container				
+					.logo_w
+						| SmartHomecare
+			.container
+				hr
+				.footer
+					ul.container
+						li
+							.logo_shuttle_w Shuttle
+						li
+							i.icon-add
+							| 臺北市內湖區瑞光路76巷30號
+						li
+							i.icon-phone
+							| 886-2-87926168
+						li
+							i.icon-fax
+							| 886-2-27936286
+						li
+							i.icon-mail
+							a href="mailto:hoca_sales@tw.shuttle.com"  hoca_sales@tw.shuttle.com
+						li.copyright
+							| &copy; 2015 SHUTTLE INC. ALL RIGHTS RESERVED
+
+			
+
+		script src="#{scriptpaht}/jquery.min.js"
+		script src="#{scriptpaht}/swiper.min.js"
+		script src="#{scriptpaht}/script.js"
+		= render "partials/layout_ga"

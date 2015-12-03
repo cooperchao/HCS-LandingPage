@@ -1,0 +1,1245 @@
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "variables";
+
+$susy: (
+	columns: 4,
+	math: fulid,
+	gutters: 0,
+	gutter-position: inside,
+);
+	// debug: (image:show-columns)
+
+$pad            : 8;
+$desktop        : 12 (60px 20px);
+$device-pad     : 481px;
+$device-desktop : 941px;
+$mobile-headH   : 65px;
+$desktop-headH  : 91px;
+$menubdH        : 12px;
+$headMgt        : 34px;
+$imagesPath	    : "../img";
+
+// mixin
+@mixin grid-padding { padding: 0 10px; }
+@mixin block { display: block; }
+@mixin none { display: none; }
+@mixin bgsize_cover { background-size: cover; }
+@mixin relative { position: relative; }
+@mixin absolute { position: absolute; }
+@mixin fixed { position: fixed; }
+@mixin logo_pad {
+	height: 48px;
+	text-indent: -9999px;
+	background-image: url(#{$imagesPath}/logo.svg);
+	background-repeat: no-repeat;
+	background-position: 5% 50%;
+	background-size: 112px 46px;
+}
+@mixin logo_desktop {
+	height: 69px;
+	background-size: 150px 50px;
+}
+
+@mixin service-item-gutter { padding: 20px; }
+
+
+// temp
+@mixin divop { background: green; opacity: 0.8; }
+@mixin cursor-pointer { cursor: pointer; }
+@mixin cursor-default { cursor: default; }
+
+
+
+// reset
+body, div, ul, li, h1, h2, h3, a, em {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+em {
+	font-style: normal;
+}
+// global
+body, html {
+	position: relative;
+	height: 100%;
+	font-size: 62.5%;
+}
+body {
+	font-family: $fontJhengHei;
+	font-size: $dfFont;
+	line-height: $baseLineHeight;
+	color: $black-50;
+}
+a {
+	color: $action;
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+}
+.container {
+	@include container;
+	@include susy-breakpoint($device-pad, $pad) {
+		@include container;
+	}
+	@include susy-breakpoint($device-desktop, $desktop) {
+		@include container;
+	}
+}
+
+.clearfix {
+	clear: both;
+}
+
+@include border-box-sizing;
+
+// header
+.head_warp {
+	@include fixed;
+	top: 0;
+	left: 0;
+	z-index: 997;
+	width: 100%;
+	height: $mobile-headH;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255,255,255,0.647059);
+	transition: background-color 0.6s;
+	@include susy-breakpoint($device-desktop, $desktop) {
+		height: $desktop-headH;
+	}
+	&.head_fix {
+		background-color: $black-0;
+	}
+	.head {
+		@include relative;
+		.logo_wrap {
+			@include span(4);
+			padding: 7px 0 0 0;
+			@include susy-breakpoint($device-pad, $pad) {
+				@include span(8);
+				padding: 7px 20px 0 20px;
+			}
+			@include susy-breakpoint($device-desktop, $desktop) {
+				@include span(3);
+				padding: 7px 0 0 0;
+			}
+			.logo {
+				@include logo_pad;
+				@include cursor-pointer;
+				@include susy-breakpoint($device-desktop, $desktop) {
+					@include logo_desktop;
+				}
+			}
+		}
+		.menu_wrap {
+			@include none;
+			@include susy-breakpoint($device-desktop, $desktop) {
+				@include block;
+				@include span(7);
+			}
+			ul {
+				float: right;
+				li {
+					display: inline-block;
+					color: $black-90;
+					margin-left: 4px;
+					padding: 12px 10px 0 10px;
+					border-bottom: $menubdH solid transparent;
+					line-height: $desktop-headH - ($menubdH + 12);
+					@include cursor-pointer;
+					&:hover,
+					&.active {
+						border-bottom: $menubdH solid $menuborder;
+					}
+				}
+			}
+		}		
+		.logo_shuttle {
+			@include none;
+			@include susy-breakpoint($device-desktop, $desktop) {
+				@include block;
+				@include span(2 last);
+				a.logo  {
+					@include block;
+					width: 120px;
+					height: 22px;
+					margin: $headMgt 0 0 26px;
+					background: url(#{$imagesPath}/logo_shuttle.svg) no-repeat 100% 0;
+					@include bgsize_cover;
+				}
+			}			
+		}
+		.btn_menu {
+			@include block;
+			@include absolute;
+			width: 44px;
+			height: 44px;
+			top: 10px;
+			right: 10px;
+			background: $active url(#{$imagesPath}/btn_menu.png) no-repeat 50% 50%;
+			@include cursor-pointer;
+			@include susy-breakpoint($device-desktop, $desktop) {
+				@include none;
+			}
+		}
+	}
+}
+
+// marsk
+.cont_mask {
+	@include none;
+	@include fixed;
+	z-index: 998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+// navigation
+.side_menu_wrap {
+	@include fixed;
+	z-index: 999;
+	top: 0;
+	right: -400px;
+	padding: 2.5em 1.5em;
+	height: 100%;
+	color: $black-0;
+	font-size: $h3Font;
+	background-color: $active;
+	text-align: center;
+	@include susy-breakpoint($device-desktop, $desktop) {
+		top: 50%;
+		right: 20px;
+		height: auto;
+		margin-top: -142px;
+		border-radius: 30px;
+		padding: 10px 0;
+		box-shadow: 0 1px 0 0 rgba(255,255,255,0.5), inset 0 1px 3px 0 rgba(0,0,0,0.3);
+		background-color: rgba(0,0,0,0.1);
+	}
+	.side_menu {
+		li {
+			@include cursor-pointer;
+			padding: 0.8em 2.2em;
+			border-bottom:1px solid rgba(0, 0, 0, 0.2);
+			@include susy-breakpoint($device-desktop, $desktop) {
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				padding: 0;
+				background-color: $black-0;
+			}
+			& + li + li {
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				@include susy-breakpoint($device-desktop, $desktop) {
+					border-top: 0 solid transparent;
+				}
+			}
+			&.home {
+				@include none;
+				border-top: 0;
+				text-indent: -9999px;
+				@include susy-breakpoint($device-desktop, $desktop) {
+					@include block;
+					width: 28px;
+					height: 28px;
+					margin: 0 auto;
+					background: $navigation url(#{$imagesPath}/icon_home.png) no-repeat 50% 50%;
+				}
+			}
+			&.side_menu_item {
+				text-indent: 0;
+				@include susy-breakpoint($device-desktop, $desktop) {
+					margin: 14px 18px;
+					box-shadow: 0 0 5px rgba(0,0,0,0.15);
+					text-indent: -9999px;
+					&:hover,
+					&.active {
+						background-color: $navigation;
+					}
+				}
+			}
+			&.language {
+				@include cursor-default;
+				height: auto;
+				padding: 0;
+				@include susy-breakpoint($device-desktop, $desktop) {
+					background-color: transparent;
+					border-bottom: 0 solid transparent;
+				}
+				& a {
+					width: 32px;
+					height: 32px;
+					display: inline-block;
+					margin: 10px 7px;
+					border-radius: 50%;
+					border: 1px solid $black-0;
+					font-size: $quoteFontSize;
+					line-height: $quoteFontSize * 2;
+					@include susy-breakpoint($device-desktop, $desktop) {
+						width: 24px;
+						height: 24px;
+						@include block;
+						margin: 10px 14px;
+						border: 1px solid rgba(255,255,255,0.75);
+						color: $black-0;
+						font-size: $smallFontSize;
+						line-height: $smallFontSize * 1.9;
+						background-color: rgba(0,0,0,0.25);
+					}
+				}
+			}
+			&.logo_shuttle_w {
+				border-bottom: 0;
+				text-indent: -9999px;
+				background: url(#{$imagesPath}/logo_shuttle_w.svg) no-repeat 55% 50%;
+				@include susy-breakpoint($device-desktop, $desktop) {
+					@include none;
+				}
+				& a {
+					@include block;
+				}
+			}
+		}
+	}
+	.side_menu_close {
+		@include absolute;
+		top: 0;
+		right: 0;
+		width: 54px;
+		height: 54px;
+		display: block;
+		@include cursor-pointer;
+		background: url(#{$imagesPath}/btn_menu_close.png) no-repeat 50% 50%;
+		@include susy-breakpoint($device-desktop, $desktop) {
+			@include none;
+		}
+
+	}
+}
+
+
+// banner
+#banner {
+
+	background:url(#{$imagesPath}/banner.png) no-repeat 50% 0;
+	background-size:cover;
+
+	.container  {
+		padding-top: 5em; 
+		height: 420px;
+		@include susy-breakpoint( $device-desktop, $desktop) {
+			height: 740px;
+			padding-top: 10em;
+		}
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+			.swiper-slide {
+				img {
+					position: absolute;
+					left: 0;
+					display: none;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						display: block;
+					}
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						left: 7%;
+					}
+					bottom: 20%;
+				}
+				.first_img {
+					left: 14%
+				}
+				.slogan {
+					position: absolute;
+					left: 4%;
+					bottom: 0;
+					width: 92%;
+					margin: 0;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						left: 40%;
+						bottom: 0;
+						width: 60%;
+						margin: 0 0 0 -20%;
+					}
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						left: 50%;
+					}
+					span {
+						position: relative;
+						float: left;
+						display: block;
+						margin: 0.3em 1em 5.2em 0;
+						padding: 0.65em .7em;
+						border-radius: 10px;
+						font-size: 1em;
+						color: $black-0;
+						font-weight: bold;
+						background-color: $banner_span;
+						@include susy-breakpoint( $device-pad, $pad ) {
+							font-size: $h3Font;
+							margin: 0.3em 1em 2em 0;
+						}
+						@include susy-breakpoint( $device-desktop, $desktop ) {
+							margin: 0.3em 1.4em 1em 0;
+						}
+						&:after {
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%;
+							right: -10px;
+							width: 0; 
+							height: 0;
+							margin-top: -10px; 
+							border-top: 10px solid transparent;
+							border-bottom: 10px solid transparent;
+							border-left: 10px solid $banner_span;
+						}
+					}
+					h2 {
+						font-size: $dfFont;
+						line-height: 1.2em;
+						color: $black-80;
+						text-shadow: 0 0 10px $black-0;
+						@include susy-breakpoint( $device-pad, $pad ) {
+							font-size: $h2Font;
+						}
+					}
+					p {
+						margin: 0 0 10px 0;
+						font-size: $h3Font;
+						line-height: 1.2em;
+						color: $black-80;
+					}
+				}
+			}
+			.swiper-button-prev, .swiper-button-next {
+				@include none;
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					@include block;
+					top: 80%;
+					width: 54px;
+					height: 80px;
+					background: url(#{$imagesPath}/btn_arrow.png) no-repeat 50% 0;
+				}
+			}
+			.swiper-button-next {
+				background-position: 50% -80px;
+			}
+		}
+	}
+}
+
+// #banner_pagination
+#banner_pagination {
+	position: relative;
+	top: 0.6em;
+	color: $black-80;
+	@include susy-breakpoint( $device-desktop, $desktop ) {
+		top: 0;
+		height: 110px;
+		padding: 22px 0;
+	}
+	background-color: $banner_pagination;
+	.swiper-pagination {
+		left: 50%;
+		width: 80px;
+		margin-left: -40px;
+		@include susy-breakpoint( $device-desktop, $desktop ) {
+			width: 600px;
+			margin-left: -300px;
+		}
+		.swiper-pagination-bullet {
+			margin: 6px;
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				width: 150px;
+				height: 64px;
+				opacity: 0.3;
+				margin: 0;
+				background: url(#{$imagesPath}/btn_slideitem.png) no-repeat 50% 0;
+				&:nth-child(1) {
+
+				}
+				&:nth-child(2) {
+					background-position: 50% -64px;
+				}
+				&:nth-child(3) {
+					background-position: 50% -128px;
+				}
+				&:nth-child(4) {
+					background-position: 50% -192px;
+				}
+			}
+			div {
+				@include none;
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					@include block;
+					width: inherit;
+					position: absolute;
+					bottom: -26px;
+				}
+			}
+		}
+		.swiper-pagination-bullet-active {
+			opacity: 1;
+		}
+	}
+}
+
+// section
+.section_title {
+	padding: 1.2em 0 0.8em 0;
+	font-size: $dfFont;
+	text-align: center;
+	color: $black-80;
+	@include susy-breakpoint( $device-pad, $pad ) {
+		font-size: $h2Font;
+	}
+	@include susy-breakpoint( $device-desktop, $desktop ) {
+		padding: 2.2em 0 1.8em 0;
+	}
+}
+
+.l_col, .r_col {
+	float: none;
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+	@include susy-breakpoint( $device-pad, $pad ) {
+		width: 52%;
+	}
+}
+.l_col {
+	@include susy-breakpoint( $device-desktop, $desktop ) {
+		@include span(6);
+	}
+}
+.r_col {
+	@include susy-breakpoint( $device-desktop, $desktop ) {
+		@include span(6);
+	}	
+}
+.description {
+	p {
+		margin: 0 0 2em 0;
+		padding: 0 5%;
+		color: $black-50;
+	}
+}
+
+#section1 {
+	background-color: $black-0;
+	.service_detail {
+		margin: 0 0 2em 0;
+	}
+	.l_col {
+		padding: 0 0 1em 0;
+		& span {
+			@include none;
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				@include block;
+				position: absolute;
+				color: $black-50;
+				&.service_text1 {
+					top: 110px;
+					left: 100px;
+				}
+				&.service_text2 {
+					top: 240px;
+					left: 280px;
+				}
+				&.service_text3 {
+					top: 320px;
+					left: 74px;
+				}
+				&.service_text4 {
+					bottom: 0;
+					left: 174px;
+				}
+			}
+		}
+	}
+	.r_col {
+		color: $black-60;
+		.col_title {
+			font-size: $h3Font;
+			font-weight: bold;
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				font-size: $h2Font;
+				margin-top: 2em;
+			}
+		}
+	}
+	.service_class {
+
+		& > li {
+			margin: 1% 0 0 0;
+			@include span(4);
+			@include susy-breakpoint( $device-pad, $pad ) {
+				@include span(4);
+				margin: 0.4% 0 0 0;
+				&:nth-child(odd) {
+					& > div,
+					& > ul {
+						margin-right: 1%;
+					}
+				}
+			}
+			@include susy-breakpoint( $device-desktop, 12 (60px 2px) ) {
+				@include span(3);
+				margin: 20px 0 0 0;
+				&:nth-child(odd) {
+					& > div,
+					& > ul {
+						margin-right: 0;
+					}
+				}
+			}
+			.se_icon {
+				width: 6em;
+				height: 6em;
+				margin: 0 auto 0.5em auto;
+				font-size: 1em;
+				background: url(#{$imagesPath}/icon_user.png) no-repeat 50% 0;
+				background-size: cover;
+				@include susy-breakpoint( $device-pad, $pad ) {
+					width: 7em;
+					height: 7em;
+				}
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					width: 11.111111em;
+					height: 11.111111em;
+					margin: 0;
+				}
+			}
+			.administrator,
+			.supervisor,
+			.service_provider,
+			.case {
+				position: relative;
+			}
+			.administrator {
+				@include service-item-gutter;
+				background-color: $administrator;
+			}
+			.supervisor {
+				@include service-item-gutter;
+				background-color: $supervisor;
+				& .se_icon {
+					background-position: 50% -6em;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						background-position: 50% -7em;
+					}		
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						background-position: 50% -11.111111em;
+					}
+				}
+			}
+			.service_provider {
+				@include service-item-gutter;
+				background-color: $service_provider;
+				& .se_icon {
+					background-position: 50% -12em;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						background-position: 50% -14em;
+					}
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						background-position: 50% -22.222222em;
+					}
+				}
+			}
+			.case {
+				@include service-item-gutter;
+				background-color: $case;
+				& .se_icon {
+					background-position: 50% -18em;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						background-position: 50% -21em;
+					}
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						background-position: 50% -33.333333em;
+					}
+				}
+			}
+			.se_talk {
+				min-height: 4em;
+				box-shadow: 0 0 10px $black-20;
+				border-radius: 30px;
+				padding: 1em;
+				background-color: $black-0;
+				@include susy-breakpoint( $device-pad, $pad ) {
+					min-height: 6em;
+				}
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					min-height: 8.6em;
+					font-size: $h3Font;
+				}
+			}
+			.se_talk_arrow_b {
+				width: 0;
+				height: 0;
+				margin: 0 auto;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 20px solid $black-0;
+			}
+			.se_user {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				background-color: $black-0;
+				opacity: 0.8;
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					font-size: $h3Font;
+				}
+			}
+			.se_item1,
+			.se_item2,
+			.se_item3,
+			.se_item4 {
+				min-height: 8em;
+				padding: 0.6em;
+				color: $black-60;
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					font-size: $h3Font;
+				}
+				& li:before {
+					content: '';
+					display: inline-block;
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					margin: 0 0.6em 0.25em 0;
+					background-color: $black-60;
+				}
+			}
+			.se_item1 {
+				background-color: $se_item1;
+			}
+			.se_item2 {
+				background-color: $se_item2;
+			}
+			.se_item3 {
+				background-color: $se_item3;
+			}
+			.se_item4 {
+				background-color: $se_item4;
+			}
+		}
+	}
+}
+
+#section2 {
+	background-color: $footer;
+	.more_service {
+		& > li {
+			border-bottom: 1px solid $black-0;
+			padding: 20px 0 40px 0;
+			@include susy-breakpoint( $device-pad, $pad ) {
+				padding: 40px 0;
+			}
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				&:first-child {
+					padding: 0 0 40px 0;
+				}
+			}
+			text-align: center;
+			&:last-child {
+				border-bottom: 0;
+			}
+			&:after {
+				content: "";
+				height: 0;
+				display: block;
+				clear: both;
+			}
+			& img {
+				max-width: 80%;
+				@include susy-breakpoint( $device-pad, $pad ) {
+					max-width: 100%;
+				}
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					float: left;
+				}
+			}
+			& .col_item {
+				float: none;
+				width: 80%;
+				margin: 0 auto;
+				text-align: left;
+				@include susy-breakpoint( $device-pad, $pad ) {
+					float: none;
+					margin: 0 auto;
+				}
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					width: 58%;
+					margin: 40px 0 0 40px;
+					float: left;
+				}
+				& .col_title {
+					color: $active;
+					margin: 0.5em 0 1em 0.6em;
+					font-size: $h3Font;
+					font-weight: bold;
+				}
+				& ul > li {
+					margin: 0 0 0.8em 0;
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 4px;
+						height: 4px;
+						border-radius: 50%;
+						margin: 0 0.6em 0.25em 0;
+						background-color: $black-50;
+					}
+				}
+			}
+			&.more_item1,
+			&.more_item3,
+			&.more_item5 {
+				& img {
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						float: right;
+					}
+				}
+			}
+			&.more_item2 {
+				.col_item {
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						width: 60%;
+					}
+				}
+			}
+			&.more_item3 {
+				.col_item {
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						margin: 40px 0 0 0;
+					}
+				}
+			}
+			&.more_item4 {
+				& .col_item {
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						width: 64%;
+					}
+				}
+			}
+			&.more_item5 {
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					& img {
+						margin-top: 0.5em;
+					}
+				}
+			}
+			&.more_item6 {
+				@include susy-breakpoint( $device-desktop, $desktop ) {
+					& img {
+						margin: 2.5em 6em 0 0;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+#section3 {
+	background-color: $black-0;
+	h2 {
+		margin: 0 0 3em 0;
+		color: $black-60;
+		text-align: center;
+		font-weight: normal;
+		padding: 0 1em;
+	}
+	.col_item {
+		position: relative;
+		@include susy-breakpoint( $device-desktop, $desktop ) {
+			min-height: 940px;
+			background: url(#{$imagesPath}/section3_bg.svg) -6% 40% no-repeat;
+			background-size: 48%;
+		}
+		.col_sketch {
+			font-size: $h3Font;
+			line-height: 1.1em;
+			font-weight: bold;
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				font-size: $h2Font;
+				margin-bottom: 0.4em;
+			}
+		}
+		.col_title {
+			font-size: $h3Font;
+			font-weight: bold;
+			color: $section3title;
+			word-break: break-all;
+		}
+		p {
+			margin: 0 0 1em 0;
+		}
+		.item1_icon {
+			background: url(#{$imagesPath}/section3_icon04.svg) no-repeat 50% 50%;
+		}
+		.item2_icon {
+			background: url(#{$imagesPath}/section3_icon02.svg) no-repeat 50% 50%;
+		}
+		.item3_icon {
+			background: url(#{$imagesPath}/section3_icon05.svg) no-repeat 50% 50%;
+		}
+		.item1_icon,
+		.item2_icon,
+		.item3_icon {
+			position: relative;
+			float: left;
+			width: 5em;
+			height: 5em;
+			margin: -0.6em 0 0 0.4em;
+			background-size: cover;
+			@include susy-breakpoint( $device-pad, $pad ) {
+				width: 9em;
+				height: 9em;
+			}
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				margin: 4em 0 0 0.4em;
+				position: absolute;
+				float: none;
+				width: 12em;
+				height: 12em;
+			}
+		}
+		.item1,
+		.item2,
+		.item3 {
+			float: right;
+			width: 60%;
+			margin: 0 5% 5% 0;
+			color: $black-50;
+			@include susy-breakpoint( $device-pad, $pad ) {
+				width: 70%;
+			}
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				position: absolute;
+				float: none;
+				margin: 0;
+			}
+		}
+		@include susy-breakpoint( $device-desktop, $desktop ) {
+			.item1_icon {
+				top: 12%;
+				left: 1%;
+				background: url(#{$imagesPath}/section3_icon01.svg) no-repeat 50% 50%;
+			}
+			.item1 {
+				top: 0;
+				left: 8%;
+				width: 82%;
+			}
+			.item2_icon {
+				top: 26%;
+				left: 27%;
+				bottom: 0;
+				background: url(#{$imagesPath}/section3_icon02.svg) no-repeat 50% 50%;
+			}
+			.item2 {
+				top: 33%;
+				right: 0;
+				width: 46%;
+			}
+			.item3_icon {
+				top: 40%;
+				left: 1%;
+				bottom: 0;
+				background: url(#{$imagesPath}/section3_icon03.svg) no-repeat 50% 50%;
+			}
+			.item3 {
+ 				left: 8%;
+				bottom: 4%;
+				width: 92%;
+			}
+		}
+		.row {
+			clear: both;
+		}
+	}
+	hr {
+		height: 1px;
+		border: 0;
+		background-color: $black-10;
+		@include susy-breakpoint( $device-desktop, $desktop ) {
+			margin-top: 4em;
+		}
+		&:nth-child(2) {
+			margin-top: 4em;
+		}
+	}
+	// 比較表格
+	.compare_list {
+		padding: 5em 0 0 0;
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			th {
+				vertical-align: middle;
+				& .c_l_col,
+				& .c_r_col {
+					width: 100%;
+					display: block;
+					vertical-align: bottom;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						width: 40%;
+						display: inline-block;
+					}
+				}
+				& .c_name {
+					font-size: $h3Font;
+					text-align: center;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						text-align: right;
+						margin-bottom: 0.4em;
+					}
+				}
+				& .c_icon {
+					text-align: center;
+					@include susy-breakpoint( $device-pad, $pad ) {
+						margin-left: 1em;
+						text-align: left;
+					}
+				}
+			}
+			td {
+				border: 0.2em solid $footer;
+				&.c_col1 {
+					border-bottom: 0.2em solid $footer;
+					font-size: $h3Font;
+					text-align: center;
+					background-color: $footer;
+				}
+				&.c_col2 {
+					background-color: $black-0;
+					.row2 {
+						color: #7099CC;
+					}
+				}
+				&.c_col3	{
+					background-color: $black-0;
+					.row2 {
+						color: #F9A53D;
+					}
+				}
+				&.c_col2,
+				&.c_col3 {
+					height: 12em;
+					vertical-align: top;
+					text-align: center;
+					padding: 0.1em 0.2em; 
+					@include susy-breakpoint( $device-desktop, $desktop ) {
+						padding: 1em;
+					}
+					.row1 {
+						height: 8em;
+						padding: 0 0.4em;
+						color: $black-50;
+						text-align: left;
+						font-size: 0.888888em;
+						@include susy-breakpoint( $device-pad, $pad ) {
+							padding: 2em 2em 0 2em;
+						}
+						@include susy-breakpoint( $device-desktop, $desktop ) {
+							height: 6em;
+							padding: 0 2em;
+							font-size: $h3Font;
+						}
+					}
+					.row2 {
+						font-size: $h3Font;
+						padding-right: 2em;
+						span {
+							@include block;
+							padding-top: 0.6em;
+							font-size: 1.75em;
+							line-height: 1em;
+							&#num5 {
+								visibility: hidden;
+							}
+						}
+						img {
+							float: left;
+							margin-left: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+	.description {
+		margin-top: 5em;
+		border-top: 1px solid $black-0;
+		padding: 0 0 3.75em 0;
+		img {
+			display: block;
+			margin: 0 auto;
+			@include susy-breakpoint ( $device-desktop, $desktop ) {
+				float: left;
+				margin: 0 5em 3em 0;
+			}
+		}
+		p {
+			margin: 0;
+			color: #5F6A73;
+			font-size: $h3Font;
+			font-weight: bold;
+			@include susy-breakpoint ( $device-desktop, $desktop ) {
+				margin-top: 0.4em;
+			}
+		}
+	}
+}
+
+
+#section4 {
+	padding-bottom: 4em;
+	background-color: $footer;
+
+	.other_item {
+		& li {
+			width: 33.333%;
+			float: left;
+			position: relative;
+			@include susy-breakpoint( $device-pad, $pad) {
+				width: 20%;
+			}
+			&.ot_more1,
+			&.ot_more5,
+			&.ot_more6,
+			&.ot_more10,
+			&.ot_more11,
+			&.ot_more15 {
+				@include none;
+				@include susy-breakpoint( $device-pad, $pad) {
+					@include block;
+				}
+			}
+
+			&:before {
+				content: "";
+				display: block;
+				margin-top: 100%;
+			}
+			& > img,
+			& > span {
+				position: absolute;
+				z-index: 1;
+			}
+			& > img {
+				top : 0;
+				left: 0; 
+			}
+			& > span {
+				bottom: 10%;
+				width: 100%;
+				display: block;
+			}
+			&.ot_more2 {
+				background: $black-0 url(#{$imagesPath}/section4_icon1.svg) no-repeat 50% 40%;
+			}
+			&.ot_more8 {
+				background: $black-0 url(#{$imagesPath}/section4_icon2.svg) no-repeat 50% 40%;
+			}
+			&.ot_more12 {
+				background: $black-0 url(#{$imagesPath}/section4_icon3.svg) no-repeat 50% 40%;
+			}
+			&.ot_more14 {
+				background: $black-0 url(#{$imagesPath}/section4_icon4.svg) no-repeat 50% 40%;
+			}
+			&.ot_more2,
+			&.ot_more8,
+			&.ot_more12,
+			&.ot_more14 {
+				border: 1px solid $black-10;
+				text-align: center;
+				background-size: 35%;
+				font-size: 0.8em;
+				@include susy-breakpoint( $device-desktop, $desktop) {
+					background-size: 50%;
+					font-size: 1.125em;
+				}
+			}
+		}
+	}
+}
+
+
+
+// footer
+.footer_wrap {
+	text-align: center;
+	.footer_logo {
+		padding: 50px 0 20px 0;
+		.logo_w {
+			@include logo_pad;
+			background-position: 50% 50%;
+			@include susy-breakpoint( $device-desktop, $desktop ) {
+				@include logo_desktop;
+			}
+		}
+	}
+
+	hr {
+		height: 1px;
+		border: 0;
+		background-color: $black-10;
+	}
+
+	.footer {
+		color: $black-80;
+		padding: 40px 0;
+		.logo_shuttle_w {
+			margin-bottom: 10px;
+			border-bottom: 0;
+			text-indent: -9999px;
+			background: url(#{$imagesPath}/logo_shuttle_g.svg) no-repeat 50% 50%;	
+		}
+		a {
+			color: $black-80;
+		}
+		
+		li {
+			font-size: 0.888888em;
+			i {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				margin: 0 10px 0 0;
+				background: url(#{$imagesPath}/icon_footer.svg) no-repeat 0 0;
+				background-size: 16px 64px;
+				&.icon-add {
+					background-position: 50% 0; 
+				}
+				&.icon-phone {
+					background-position: 50% -16px; 
+				}
+				&.icon-fax {
+					background-position: 50% -32px;
+				}
+				&.icon-mail {
+					background-position: 50% -48px; 
+				}
+			}
+			&.copyright {
+				font-size: 0.516em;
+			}
+		}
+	}
+}

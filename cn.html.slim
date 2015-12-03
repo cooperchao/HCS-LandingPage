@@ -1,0 +1,430 @@
+- sitetitle      = 'HOCA - Smart Homecare'
+
+/ dev
+- assetspath     = 'stylesheets'
+- scriptpaht     = 'scripts'
+- imagespath     = 'img'
+- httpspath      = 'https://'
+
+doctype html
+html lang="zh-cn"
+
+	head
+		meta charset="utf-8"
+		meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+		title #{sitetitle}
+		link href="#{imagespath}/favicon.png" rel="shortcut icon" type="image/png" sizes="32x32"
+		link href="#{assetspath}/swiper.css" rel="stylesheet" type="text/css"
+		link href="#{assetspath}/global.css" rel="stylesheet" type="text/css"
+
+	body
+		.cont_mask
+		.side_menu_wrap 
+			ul.side_menu
+				li.home
+					| gotop
+				li.side_menu_item
+					| 服务介绍
+				li.side_menu_item
+					| 产品功能
+				li.side_menu_item 
+					| 产品优势
+				li.side_menu_item 
+					| 系统应用
+				li.language
+					a href="index.html" 繁
+					a href="cn.html" 簡
+					a href="en.html" En
+				li.logo_shuttle_w
+					a href="http://www.shuttle.com" target="_blank" Shuttle
+			.side_menu_close
+
+		.head_warp
+			.head.container
+				.logo_wrap
+					.logo
+						| SmartHomecare
+
+				.menu_wrap
+					ul.menu
+						li
+							| 服务介绍
+						li
+							| 产品功能
+						li
+							| 产品优势
+						li
+							| 系统应用
+
+				.logo_shuttle
+					a.logo href="http://www.shuttle.com" target="_blank"
+
+				.btn_menu
+
+		.cont_wrap
+
+			#banner
+				/ .banner_mask
+				.container
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img src="#{imagespath}/banner_01.png"
+								.slogan
+									span 效率
+									h2 智能筛选派案
+									p 智能派遣配对，精准人力安排
+
+							.swiper-slide
+								img src="#{imagespath}/banner_02.png"
+								.slogan
+									span 便利
+									h2 行动服务打卡
+									p 提供手机服务打卡，强化数据正确运算
+
+							.swiper-slide
+								img src="#{imagespath}/banner_03.png"
+								.slogan
+									span 省力
+									h2 成果费用汇总
+									p 服务成果报表，实时一键导出
+
+							.swiper-slide
+								img src="#{imagespath}/banner_04.png"
+								.slogan
+									span 实时
+									h2 数字服务评鉴
+									p 服务评鉴数字化，有效提升单位服务质量
+
+						.swiper-button-next
+						.swiper-button-prev
+			
+			#banner_pagination
+				.container
+					.swiper-pagination
+
+			#section1
+				.container
+					.section_title 我们的服务
+					.service_detail
+						.l_col
+							img src="#{imagespath}/section1_01.png"
+							span.service_text1 督导/评鉴
+							span.service_text2 个案服务/打卡
+							span.service_text3 居服员
+							span.service_text4 媒合派遣
+
+						.r_col
+							.col_title
+								| 专业、多元、全方位
+								br
+								| 数字化服务管理系统
+
+							p
+								| 智能居服管理系统是一套专为智能居家服务所设计的作业流程管理系统，主要功能包含智能筛选派案、行动服务打卡、成果费用汇总、数字服务评鉴、耗材库存管理，提供满足多样、弹性的居家服务流程需求。
+
+						.clearfix
+
+					ul.service_class
+						li
+							.administrator
+								.se_talk
+									| 所有报表只需一指就轻松搞定!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 主管/行政人员
+
+							ul.se_item1
+								li 成果汇总
+								li 费用管理
+								li 绩效管理
+
+						li
+							.supervisor
+								.se_talk
+									| 谁才是适合人选，终于不必再伤脑筋了!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 督导员
+
+							ul.se_item2
+								li 智能筛选派案
+								li 职训/会议安排
+								li 个案评鉴汇总
+						
+						li
+							.service_provider
+								.se_talk
+									| 搭配行动装置，打卡、查询都变得好方便!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 居服员
+
+							ul.se_item3
+								li 行动服务打卡
+								li 耗材申请
+								li 费用收取
+
+						li
+							.case
+								.se_talk
+									| 居服员服务真亲切，给他一个赞!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user
+									| 个案
+
+							ul.se_item4
+								li 居服任务提醒
+								li 数字服务评鉴
+			
+
+			#section2
+				.container
+					.section_title 比想象更多的服务
+					ul.more_service
+						li.more_item1
+							img src="#{imagespath}/more_item1_cn.png"
+							.col_item
+								.col_title 智能筛选派案
+								ul
+									li 透过智能筛选配对，精准快速的安排人力资源
+									li 弹性设定单次或周期性任务
+									li 设定发布职训/会议任务，系统自动通知与提醒
+						li.more_item2
+							img src="#{imagespath}/more_item2_cn.png"
+							.col_item
+								.col_title 行动服务打卡
+								ul
+									li 提供居服员任务信息可联机同步于随身的行动装置
+									li 具备行事历功能，随点即查服务时间和项目内容
+									li 利用行动装置APP打卡，实时登录居服员任务运行时间
+									li 为使任务执行不受限于网络联机，系统提供任务脱机查询与打卡功能
+						li.more_item3
+							img src="#{imagespath}/more_item3_cn.png"
+							.col_item
+								.col_title 成果费用汇总
+								ul
+									li 提供符合评核单位需求的各项报表，并提供导出excel功能
+									li 提供居服单位可结算居服人员薪资与在职津贴等相关人事费用
+									li 提供结算个案自费费用，并有提醒收费等机制
+									li 提供居服单位可简便导出整体核销明细与分析
+						li.more_item4
+							img src="#{imagespath}/more_item4_cn.png"
+							.col_item
+								.col_title 数字服务评鉴
+								ul
+									li 个案利用APP针对单项任务或整体意见回馈，完成后自动回传云端数据库
+									li 整合相关居服评鉴数据，并提供居服单位可简便导出excel的功能 
+						li.more_item5
+							img src="#{imagespath}/more_item5.png"
+							.col_item
+								.col_title 耗材库存管理
+								ul
+									li 提供可于在线申请/签核耗材需求，便于居服单位精准进行物料控管
+									li 提供移动设备耗材申请纪录和实时库存量查询功能
+						li.more_item6
+							img src="#{imagespath}/more_item6.png"
+							.col_item
+								.col_title 信息通知提醒 
+								ul
+									li 提示任务行程
+									li 每月个案收费信息提醒
+									li 职训/会议时程信息通知
+									li 服务未执行信息通知(案家不在，导致服务无法进行)
+
+			#section3
+				.container
+					.section_title 空下双手，专注服务
+					.col_item
+						.row
+							.item1_icon
+							.item1
+								.col_sketch 简便
+								.col_title 界面簡單易操作，降低导入门坎
+								p 
+									| 提供居服单位免安装软件、免人力维护，所有数据实时汇总传到云端数据库，只需在联机状态下，就可以随时查询纪录、执行派发任务，相关信息与行动装置同步更新。
+						.row
+							.item2_icon
+							.item2
+								.col_sketch 便利
+								.col_title 平台兼容各种移动设备，随身装置无障碍
+								p 
+									| 系统支持各移动设备（Android移动设备）及主流浏览器（IE11, Firefox, Chrome, Safari）使用，透过行动装置的打卡功能、任务实时查询、重要信息通知提醒，让用户更有效的进行服务，此外，我们还提供脱机使用，即使在网络环境不佳的情况下，同样可以执行功能，系统设计兼容并蓄，兼顾居服单位的传统流程，并且发挥数字化的强大优势。
+						.row
+							.item3_icon
+							.item3
+								.col_sketch 效率
+								.col_title 成果数据报表，轻松一键导出
+								p 
+									| 智能居服管理系统最大的优势是将居服流程里的各个环节数字化，并且打破传统纸本限制，让以往需要耗费人力和时间整理数据、沟通、纪录、分析等作业流程，透过系统功能优化服务质量、降低人工计算错误率、并且大幅提升作业效率。
+				.compare_list
+					.container
+						table width="80%"
+							tr
+								th width="50%"
+								    .c_l_col
+										.c_name 数字化前
+								    .c_r_col
+										.c_icon
+								    		img src="#{imagespath}/section3_table1.svg"
+								th width="50%"
+								    .c_l_col
+										.c_name 数字化后
+									.c_r_col
+										.c_icon
+											img src="#{imagespath}/section3_table2.svg"
+							tr
+								td.c_col1 colspan="2"
+									| 筛选派案
+							tr
+								td.c_col2
+									.row1
+										| 调阅纸本资料，一一人工比对适合人选
+									.row2
+										img src="#{imagespath}/section3_table_4.png"
+										span#num1 0
+										| 分钟
+								td.c_col3
+									.row1
+										| 系统智慧筛选，督导员再次确认
+									.row2
+										img src="#{imagespath}/section3_table_5.png"
+										span#num2 0
+										| 分钟
+							tr
+								td.c_col1 colspan="2"
+									| 服务打卡
+							tr
+								td.c_col2
+									.row1
+										| 人工记录服务时间，纸本签到签退
+									.row2
+										img src="#{imagespath}/section3_table_6.png"
+										span#num3 0
+										| 分钟
+								td.c_col3
+									.row1
+										| 运用载具APP打卡签到签退
+									.row2
+										img src="#{imagespath}/section3_table_7.png"
+										span#num4 0
+										| 分钟
+							tr
+								td.c_col1 colspan="2"
+									| 成果报表
+							tr
+								td.c_col2
+									.row1
+										| 各项报表资料汇总结算
+									.row2
+										img src="#{imagespath}/section3_table_8.png"
+										span#num5 0
+										| 数天
+								td.c_col3
+									.row1
+										| 选定报表后一键汇出
+									.row2
+										img src="#{imagespath}/section3_table_9.png"
+										span#num6 0
+										| 分钟
+							tr
+								td.c_col1 colspan="2"
+									| 服务评鉴
+							tr
+								td.c_col2
+									.row1
+										| 填写纸本，须人工整理建档与分析
+									.row2
+										img src="#{imagespath}/section3_table_10.png"
+										span#num7 0
+										| 天
+								td.c_col3
+									.row1
+										| APP勾选，资料回传系统
+									.row2
+										img src="#{imagespath}/section3_table_11.png"
+										span#num8 0.5
+										| 天
+
+						.description
+							img src="#{imagespath}/section3_table3.svg"
+							p
+								| 智能居服管理系统适用于各类型居家服务单位使用，数字化流程能有效地提升行政效率，降低营运成本和改善人力资源分配，并且可在短时间内提供单位无障碍e化导入。
+
+					
+			#section4
+				.container
+					.section_title 我们有更多的可能...
+					.description
+						p
+							| 除了提供居服单位完整的数字化服务管理系统之外，我们还可以针对不同产业特性和需求进行客制化服务，例如针对居家清洁派遣服务、到家维修、临时人力派遣服务等各种应用，详细相关信息，欢迎您来电咨询！
+					ul.other_item
+						li.ot_more1
+							img src="#{imagespath}/section4_pic-01.png"
+						li.ot_more2
+							span 到家清洁服务
+						li.ot_more3
+							img src="#{imagespath}/section4_pic-02.png"
+						li.ot_more4
+							img src="#{imagespath}/section4_pic-03.png"
+						li.ot_more5
+							img src="#{imagespath}/section4_pic-04.png"
+						li.ot_more6
+							img src="#{imagespath}/section4_pic-05.png"
+						li.ot_more7
+							img src="#{imagespath}/section4_pic-06.png"
+						li.ot_more8
+							span 各种人力派遣服务
+						li.ot_more9
+							img src="#{imagespath}/section4_pic-07.png"
+						li.ot_more10
+							img src="#{imagespath}/section4_pic-08.png"
+						li.ot_more11
+							img src="#{imagespath}/section4_pic-09.png"
+						li.ot_more12
+							span 到家维修服务
+						li.ot_more13
+							img src="#{imagespath}/section4_pic-10.png"
+						li.ot_more14
+							span 其他产业...
+						li.ot_more15
+							img src="#{imagespath}/section4_pic-11.png"
+
+
+		.footer_wrap
+
+			.footer_logo
+				.container				
+					.logo_w
+						| SmartHomecare
+			.container
+				hr
+				.footer
+					ul.container
+						li
+							.logo_shuttle_w Shuttle
+						li
+							i.icon-add
+							| 台北市内湖区瑞光路76巷30号
+						li
+							i.icon-phone
+							| 886-2-87926168
+						li
+							i.icon-fax
+							| 886-2-27936286
+						li
+							i.icon-mail
+							a href="mailto:hoca_sales@tw.shuttle.com"  hoca_sales@tw.shuttle.com
+						li.copyright
+							| &copy; 2015 SHUTTLE INC. ALL RIGHTS RESERVED
+
+			
+
+		script src="#{scriptpaht}/jquery.min.js"
+		script src="#{scriptpaht}/swiper.min.js"
+		script src="#{scriptpaht}/script.js"
+		= render "partials/layout_ga"

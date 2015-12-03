@@ -1,0 +1,422 @@
+- sitetitle      = 'HOCA - Smart Homecare'
+
+/ dev
+- assetspath     = 'stylesheets'
+- scriptpaht     = 'scripts'
+- imagespath     = 'img'
+- httpspath      = 'https://'
+
+doctype html
+html lang="en"
+
+	head
+		meta charset="utf-8"
+		meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+		title #{sitetitle}
+		link href="#{imagespath}/favicon.png" rel="shortcut icon" type="image/png" sizes="32x32"
+		link href="#{assetspath}/swiper.css" rel="stylesheet" type="text/css"
+		link href="#{assetspath}/global.css" rel="stylesheet" type="text/css"
+
+	body
+		.cont_mask
+		.side_menu_wrap 
+			ul.side_menu
+				li.home
+					| gotop
+				li.side_menu_item
+					| Services
+				li.side_menu_item
+					| Specification
+				li.side_menu_item 
+					| Features
+				li.side_menu_item 
+					| Features
+				li.language
+					a href="index.html" 繁
+					a href="cn.html" 簡
+					a href="en.html" En
+				li.logo_shuttle_w
+					a href="http://www.shuttle.com" target="_blank" Shuttle
+			.side_menu_close
+
+		.head_warp
+			.head.container
+				.logo_wrap
+					.logo
+						| SmartHomecare
+
+				.menu_wrap
+					ul.menu
+						li
+							| Services
+						li
+							| Specification
+						li
+							| Features
+						li
+							| Application
+
+				.logo_shuttle
+					a.logo href="http://www.shuttle.com" target="_blank"
+
+				.btn_menu
+
+		.cont_wrap
+
+			#banner
+				/ .banner_mask
+				.container
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img src="#{imagespath}/banner_01.png"
+								.slogan style="bottom:20px"
+									h2 Filter
+									p Highly efficient speed matching
+
+							.swiper-slide
+								img src="#{imagespath}/banner_02.png"
+								.slogan style="bottom:20px"
+									h2 Mobile Check-in
+									p Easy access to various services
+
+							.swiper-slide
+								img src="#{imagespath}/banner_03.png"
+								.slogan style="bottom:20px"
+									h2 Cost Calculation
+									p Detailed reports exported with one click
+
+							.swiper-slide
+								img src="#{imagespath}/banner_04.png"
+								.slogan style="bottom:20px"
+									h2 Online Assessment
+									p Instant feedback and evaluation
+
+						.swiper-button-next
+						.swiper-button-prev
+			
+			#banner_pagination
+				.container
+					.swiper-pagination
+
+			#section1
+				.container
+					.section_title Our Services
+					.service_detail
+						.l_col
+							img src="#{imagespath}/section1_01.png"
+							span.service_text1 style="left:20px" Service Assessment
+							span.service_text2 Mobile check-in
+							span.service_text3 style="left:30px" Service provider
+							span.service_text4 style="left:190px" Filter
+
+						.r_col
+							.col_title
+								| A professional, diverse, digital service management system
+							p
+								| Smart Homecare System is a session-oriented management system designed for homecare services exclusively.
+
+						.clearfix
+
+					ul.service_class
+						li
+							.administrator
+								.se_talk style="font-size:16px"
+									| Export report with one click!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user style="font-size:18px"
+									| Supervisor/Administrator
+
+							ul.se_item1
+								li style="font-size:18px" Report
+								li style="font-size:18px" Cost Calculation
+
+						li
+							.supervisor
+								.se_talk style="font-size:16px"
+									| Zero trouble choosing appropriate caregiver!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user style="font-size:18px"
+									| Instructor
+
+							ul.se_item2
+								li style="font-size:18px" Dispatchment
+								li style="font-size:18px" Training arrangement
+						
+						li
+							.service_provider
+								.se_talk style="font-size:16px"
+									| Easy monitoring with check-in and online searching system.
+								.se_talk_arrow_b
+								.se_icon
+								.se_user style="font-size:18px"
+									| Service provider
+
+							ul.se_item3
+								li style="font-size:18px" Mobile check-in
+								li style="font-size:18px" Supply management
+
+						li
+							.case
+								.se_talk style="font-size:16px"
+									| Endorse the excellent care giver!
+								.se_talk_arrow_b
+								.se_icon
+								.se_user style="font-size:18px"
+									| Client
+
+							ul.se_item4
+								li style="font-size:18px" Notification
+								li style="font-size:18px" Online Assessment
+			
+
+			#section2
+				.container
+					.section_title More than you can imagine
+					ul.more_service
+						li.more_item1
+							img src="#{imagespath}/more_item1_en.png"
+							.col_item
+								.col_title Filter
+								ul
+									li Speed matching with service requirement filter.
+									li Single or recurring session assignment.
+									li Meeting or training session reminder.
+						li.more_item2
+							img src="#{imagespath}/more_item2_en.png"
+							.col_item
+								.col_title Mobile check-in
+								ul
+									li Device synchronization.
+									li Sessions are integrated to personal calendar for users to check time and action.
+									li Activities and check-in history are recorded in the system.
+									li Stored data are available for offline search.
+						li.more_item3
+							img src="#{imagespath}/more_item3_en.png"
+							.col_item
+								.col_title Cost Calculation
+								ul
+									li Various types of reports fitting government requirements could be exported in excel.
+									li Salary and compensation are calculated in the system.
+									li Expense by client is calculated in the system.
+									li Receipts with detailed charging records are available.
+						li.more_item4
+							img src="#{imagespath}/more_item4_en.png"
+							.col_item
+								.col_title Online Assessment
+								ul
+									li In-app client feedbacks are sent to system database automatically.
+									li Complete reports including assessment and caregiver activities can be exported in excel.
+						li.more_item5
+							img src="#{imagespath}/more_item5.png"
+							.col_item
+								.col_title Supply management 
+								ul
+									li Online application and approval. Real-time online management.
+									li Application records and stock available for online searching.
+						li.more_item6
+							img src="#{imagespath}/more_item6.png"
+							.col_item
+								.col_title Notification system 
+								ul
+									li Coming sessions.
+									li Charging information.
+									li Training sessions.
+									li Missed sessions.
+
+			#section3
+				.container
+					.section_title One Touch Solution to All Tasks
+					.col_item
+						.row
+							.item1_icon
+							.item1
+								.col_sketch Easy
+								.col_title Friendly interface, intuitive operation, online services.
+								p 
+									| Friendly interface, intuitive operation, online services.No need to of system installation or maintenance. All data are stored in the cloud and available for online searching and assignment with synchronization on device.
+
+						.row
+							.item2_icon
+							.item2
+								.col_sketch Convenience
+								.col_title Cross-platform easy-to-access system
+								p 
+									| Features like check-in, instant searching, calendar and notification enable users to manage homecare services effificiently.
+						.row
+							.item3_icon
+							.item3
+								.col_sketch Efficiency
+								.col_title Detailed report with a click
+								p 
+									| Online management system allows better use of resources and time, and hence improve service quality and management efficiency.
+				.compare_list
+					.container
+
+						table width="90%" cellpadding="0" cellspacing="0" border="0"
+							tr
+								th width="50%"
+								    .c_l_col
+										.c_name Before
+								    .c_r_col
+										.c_icon
+								    		img src="#{imagespath}/section3_table1.svg"
+								th width="50%"
+								    .c_l_col
+										.c_name After
+									.c_r_col
+										.c_icon
+											img src="#{imagespath}/section3_table2.svg"
+							tr
+								td.c_col1 colspan="2"
+									| Filter
+							tr
+								td.c_col2
+									.row1
+										| Caregiver profile list
+									.row2
+										img src="#{imagespath}/section3_table_4.png"
+										span#num1 0
+										| min
+								td.c_col3
+									.row1
+										| Smart filter. Double checking manually.
+									.row2
+										img src="#{imagespath}/section3_table_5.png"
+										span#num2 0
+										| min
+							tr 
+								td.c_col1 colspan="2"
+									| Check-in
+							tr
+								td.c_col2
+									.row1
+										| Pen and paper check-in and check-out records
+									.row2
+										img src="#{imagespath}/section3_table_6.png"
+										span#num3 0
+										| min
+								td.c_col3
+									.row1
+										| One-click search on portable devices. Scanning QR code to do check-in.
+									.row2
+										img src="#{imagespath}/section3_table_7.png"
+										span#num4 0
+										| min
+							tr
+								td.c_col1 colspan="2"
+									| Reports
+							tr
+								td.c_col2
+									.row1
+										| Integration of all collected data
+									.row2
+										img src="#{imagespath}/section3_table_8.png"
+										span#num5 0
+										| Several days
+								td.c_col3
+									.row1
+										| One-click report export
+									.row2
+										img src="#{imagespath}/section3_table_9.png"
+										span#num6 0
+										| min
+							tr
+								td.c_col1 colspan="2"
+									| Service Assessment
+							tr
+								td.c_col2
+									.row1
+										| Printed and written records have to be keyed in the system manually
+									.row2
+										img src="#{imagespath}/section3_table_10.png"
+										span#num7 0
+										| days
+								td.c_col3
+									.row1
+										| Sending data to the system with one click
+									.row2
+										img src="#{imagespath}/section3_table_11.png"
+										span#num8 0.5
+										| day
+
+						.description
+							img src="#{imagespath}/section3_table3.svg"
+							p
+								| Smart Homecare System is suitable for various kinds of homecare facilities with service efficiency enhancement. Rapid and easy digitalization saves much time and effort and optimizes resource allocation and reduces cost. As a result, facility managing staff could focus on other important things.
+
+					
+			#section4
+				.container
+					.section_title More...
+					.description
+						p
+							| In addition to  homecare service management, we also provide customization for customers, such as house cleaning, repairs, labor dispatchment, etc. E-mail us for more details.
+					ul.other_item
+						li.ot_more1
+							img src="#{imagespath}/section4_pic-01.png"
+						li.ot_more2
+							span House cleaning services
+						li.ot_more3
+							img src="#{imagespath}/section4_pic-02.png"
+						li.ot_more4
+							img src="#{imagespath}/section4_pic-03.png"
+						li.ot_more5
+							img src="#{imagespath}/section4_pic-04.png"
+						li.ot_more6
+							img src="#{imagespath}/section4_pic-05.png"
+						li.ot_more7
+							img src="#{imagespath}/section4_pic-06.png"
+						li.ot_more8
+							span Labor dispatch
+						li.ot_more9
+							img src="#{imagespath}/section4_pic-07.png"
+						li.ot_more10
+							img src="#{imagespath}/section4_pic-08.png"
+						li.ot_more11
+							img src="#{imagespath}/section4_pic-09.png"
+						li.ot_more12
+							span Repair services
+						li.ot_more13
+							img src="#{imagespath}/section4_pic-10.png"
+						li.ot_more14
+							span Other Industries...
+						li.ot_more15
+							img src="#{imagespath}/section4_pic-11.png"
+
+
+		.footer_wrap
+
+			.footer_logo
+				.container				
+					.logo_w
+						| SmartHomecare
+			.container
+				hr
+				.footer
+					ul.container
+						li
+							.logo_shuttle_w Shuttle
+						li
+							i.icon-add
+							| No.30, Lane 76, Rei Kuang Rd., Nei-Hu Dist., Taipei 114, Taiwan
+						li
+							i.icon-phone
+							| 886-2-87926168
+						li
+							i.icon-fax
+							| 886-2-27936286
+						li
+							i.icon-mail
+							a href="mailto:hoca_sales@tw.shuttle.com"  hoca_sales@tw.shuttle.com
+						li.copyright
+							| &copy; 2015 SHUTTLE INC. ALL RIGHTS RESERVED
+
+			
+
+		script src="#{scriptpaht}/jquery.min.js"
+		script src="#{scriptpaht}/swiper.min.js"
+		script src="#{scriptpaht}/script.js"
+		= render "partials/layout_ga"

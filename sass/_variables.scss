@@ -1,0 +1,281 @@
+// =======================
+// Varables
+
+// :: Font Family
+// :: Color
+// :: Typography
+// :: Borders
+// =======================
+
+
+// -----------------------
+// :: Font Family
+// -----------------------
+
+$fontTC			: Tahoma, Helvetica, Arial, "Heiti TC", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+// Traditional Chinese Fonts
+$fontMing		: 新細明體, 'MingLiU'; 					// 新細明體
+$fontJhengHei	: 微軟正黑體, 'Microsoft JhengHei'; 		// 微軟正黒體
+$fontHeiTi		: 'Heiti TC'; 							// 黑體
+// English Fonts
+$serif			: 'Times New Roman', Times, serif; 		// Serif Fonts
+$sansSerif		: Arial, Helvetica, sans-serif;			// Sans-Serif Fonts
+$monospace		: 'Courier New', Courier, monospace; 	// Monospace Fonts
+
+
+
+// -----------------------
+// :: Color
+// -----------------------
+
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+// -----------------------
+// 指定變數到顏色的變數
+// 是描述性(名詞)而不是具體的顏色
+// 整個專案保持項目一致性，使之容易變更
+
+$primary				: #82C250;
+$transparent			: transparent;
+
+$colorGrayLighter		: #e5e5e5;
+$colorGrayLight			: #b1b1b1;
+$colorGray				: #7d7d7d;
+$colorGrayDark			: #585858;
+$colorGrayDarker		: #333333;
+
+$colorRed				: #ef6465;
+$colorOrange			: #f48a30;
+$colorGreen				: #90af45;
+$colorBlue				: #1c7ab4;
+$colorYellow			: #f3c835;
+$colorpink				: #c3325f;
+$colorpurple			: #7a43b6;
+
+
+// W3C Color Name
+$white					: #FFFFFF;
+$red					: #FF0000;
+$orange					: #FFA500;
+$green					: #008000;
+$blue					: #0000FF;
+$yellow					: #FFFF00;
+$pink					: #FFC0CB;
+$purple					: #800080;
+$black					: #000000;
+
+
+// Flat Design Colors
+$colorTurquoise			: #1ABC9C;
+$colorGreenSea			: #16a085;
+$colorEmerland			: #2ecc71;
+$colorNephritis			: #27ae60;
+$colorPeterRiver		: #3498db;
+$colorBelizeHole		: #2980b9;
+$colorAmethyst			: #9b59b6;
+$colorWisteria			: #8e44ad;
+$colorWetAsphalt		: #34495e;
+$colorMidnightBlue		: #2c3e50;
+$colorSunFlower			: #f1c40f;
+$colorOrange			: #f39c12;
+$colorCarrot			: #e67e22;
+$colorPumpkin			: #d35400;
+$colorAlizarin			: #e74c3c;
+$colorPomegranate		: #c0392b;
+$colorClouds			: #ecf0f1;
+$colorSilver			: #bdc3c7;
+$colorConcrete			: #95a5a6;
+$colorAsbestos			: #7f8c8d;
+
+
+// Grayscale
+// -----------------------
+
+// $ffffff
+$black-0: darken(white, 0%);
+
+// #f3f3f3
+$black-5: darken(white, 5%);
+
+// #e5e5e5
+$black-10: darken(white, 10%);
+
+// #d9d9d9
+$black-15: darken(white, 15%);
+
+// #ccc
+$black-20: darken(white, 20%);
+
+// #bfbfbf
+$black-25: darken(white, 25%);
+
+// #b3b3b3
+$black-30: darken(white, 30%);
+
+// #a6a6a6
+$black-35: darken(white, 35%);
+
+// #999
+$black-40: darken(white, 40%);
+
+// #8c8c8c
+$black-45: darken(white, 45%);
+
+// #808080
+$black-50: darken(white, 50%);
+
+// #737373
+$black-55: darken(white, 55%);
+
+// #666
+$black-60: darken(white, 60%);
+
+// #595959
+$black-65: darken(white, 65%);
+
+// #4d4d4d
+$black-70: darken(white, 70%);
+
+// #404040
+$black-75: darken(white, 75%);
+
+// #333
+$black-80: darken(white, 80%);
+
+// #262626
+$black-85: darken(white, 85%);
+
+// #1a1a1a
+$black-90: darken(white, 90%);
+
+// #0d0d0d
+$black-95: darken(white, 95%);
+
+
+
+// -----------------------
+// Typesizes/scale
+// -----------------------
+
+// Greek alphabet naming system. Obscure, yet hierarchical.
+// Allows us to avoid naming based on html object. 
+// Eg. A h1 can be smaller visually, than a h4.
+$alpha		: 42px;
+$beta		: 32px;
+$gamma		: 28px;
+$delta		: 26px;
+$epsilon	: 24px;
+$zeta		: 20px;
+$eta		: 18px;
+$theta		: 15px;
+$iota 		: 14px;
+$kappa		: 12px;
+
+
+// -----------------------
+// Framework 待整併
+// -----------------------
+// Font
+$baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingsFontFamily: $baseFontFamily;
+$controlsFontFamily: $baseFontFamily;
+$codeFontFamily: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Base color
+$backgroundBody		: #fff;
+$colorBody			: #333;
+$colorHeadings		: #222;
+
+// Grid
+$gridWidth			: 1000;
+$gridGutterWidth	: 30;
+
+// Type
+$baseFontSize		: 13;
+$baseLineHeight		: 1.615;
+$baseLine			: $baseFontSize * $baseLineHeight; //21
+$baseLineInEms		: $baseLine / $baseFontSize; //1.615
+
+// Heading
+$h1FontSize: $baseFontSize + 23px; // 36px
+$h2FontSize: $baseFontSize + 17px; // 30px
+$h3FontSize: $baseFontSize + 11px; // 24px
+$h4FontSize: $baseFontSize + 5px; // 18px
+$h5FontSize: $baseFontSize + 1px; // 14px
+$h6FontSize: $baseFontSize + 0px; // 13px
+
+$h1SubheadingFontSize: $baseFontSize + 17px; // 30px
+$h2SubheadingFontSize: $baseFontSize + 11px; // 24px
+$h3SubheadingFontSize: $baseFontSize + 5px; // 18px
+$h4SubheadingFontSize: $baseFontSize + 1px; // 14px
+$h5SubheadingFontSize: $baseFontSize - 1px; // 12px
+
+// Font size
+$superSmallFontSize		: $baseFontSize - 3px; // 10px
+$smallFontSize			: $baseFontSize - 1px; // 12px
+$leadFontSize			: $baseFontSize + 5px; // 18px
+$bigFontSize			: $baseFontSize + 5px; // 18px
+$quoteFontSize			: $baseFontSize + 3px; // 16px
+$buttonsSmallFontSize	: $baseFontSize - 2px; // 11px
+
+
+// cp_font
+$dfFont: 1.8em;      // 10px * 1.8 = 18px
+
+$h2Font: 2.333333em; // $dfFont * $h2Font = 42px
+$h3Font: 1.333333em; // $dfFont * $h2Font = 24px
+
+// Colors
+$colorBlack		: #0f0f0f;
+$colorBlue		: #3d58a8;
+$colorRed		: #d70a16;
+$colorGreen		: #159776;
+$colorYellow	: #fddc43;
+
+// LinkColor
+$colorLink		: #3570c3;
+$colorLinkHover	: $colorRed;
+
+// Forms
+$fieldsBottom	: 1.6em;
+
+// Z-index
+$layoutLevel-1: page, loder;
+$layoutLevel-2: page;
+
+$layout-1: section, footer, header, logo;
+$z-index: footer, section3, section4, section0, section2, header, slidermask, pad, section1, section7, section6, section5 ;
+$elements: fixed-bg, img-cover, header-bar, navi, modals, tooltip;
+$modal-elements: fields, com-dropdown, form, msg-errors, btn-close;
+
+
+// 專案自定變數
+$action: #e2e1dc;
+
+$active: #2992d0;
+$ci_attached: #3fb98c;
+$ci_assist: #74bde9;
+$menuborder: #76e0ba;
+$navigation: #f9a33a;
+$banner_span: #6ec8ab;
+$banner_pagination: #f4f9fc;
+
+$administrator: #76d6e0;
+$supervisor: #7bb3d4;
+$service_provider: #f9c482;
+$case: #d4927b;
+
+$se_item1: #c8eff3;
+$se_item2: #c8e3f3;
+$se_item3: #fde3c2;
+$se_item4: #efc8ba;
+
+$section3title: #2EBB7C;
+
+$footer: #dcecf4;
+
+$c_list_c2: #eef6fa;
+$c_list_c3: #fbe497;
